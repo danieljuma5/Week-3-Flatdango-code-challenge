@@ -35,6 +35,7 @@ body {
 
 #films li::before {
   content: "";
+  cursor: pointer;
 }
 
 .film {
@@ -52,4 +53,8 @@ img {
 
 #film-info {
   padding-bottom: 15px;
+}
+
+.list-container {
+  cursor: pointer;
 }
