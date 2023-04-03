@@ -8,7 +8,7 @@ const spanTime = document.querySelector('#showtime');
 const ticketNum = document.getElementById('ticket-num')
 const buyTicket = document.getElementById('buy-ticket')
 
-//Make a fetch request to our local server
+//Make a fetch request to our local server to add movie when page loads
 const urlDestination = 'http://localhost:3000/films'
 
 function fetchDisplayMovieTitles(id) {
@@ -25,14 +25,13 @@ function fetchDisplayMovieTitles(id) {
 
   })
 }
-//Adding movie titles
+//Adding movie titles to the list elements
 function fetchMovieTitle() {
   fetch(`${urlDestination}`)
   .then(resp => resp.json())
   .then(data => {
     uList.replaceChildren()
     data.forEach(movies => {
-      
       const movieList = document.createElement('li')
       movieList.classList = "film item"
       movieList.innerHTML = movies.title.toUpperCase();
@@ -45,11 +44,10 @@ function fetchMovieTitle() {
 
       })
       uList.appendChild(movieList);
-      
     });
   })
 }
-
+//Click event for our buy tickets button
 function buyMovieTickets() {
   buyTicket.addEventListener('click', (e) => {
       let count = parseInt(ticketNum.textContent.split(""));
@@ -63,22 +61,10 @@ function buyMovieTickets() {
     })
   
 }
-
+//Putting all our functions together when our DOM loads
 document.addEventListener("DOMContentLoaded", () => {
   fetchDisplayMovieTitles(1);
   fetchMovieTitle();
   buyMovieTickets();
 
 })
-
-
-
-
-
-console.log(uList)
-console.log(imageAdd)
-console.log(title)
-console.log(runtime)
-console.log(movieInfo)
-console.log(spanTime)
-console.log(ticketNum)

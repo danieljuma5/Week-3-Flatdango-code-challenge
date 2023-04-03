@@ -1,6 +1,5 @@
 # Flatdango
-
-Flatiron Movie Theater is open for business! You will be building out an
+Flatiron Movie Theater is open for business! I've built an
 application, Flatdango, that allows a user to purchase movie tickets from the
 theater.
 
@@ -119,51 +118,8 @@ attempting the bonus deliverables!**
    <li class="film item">(Title of film)</div>
    ```
 
-## Extra Bonus
+### Author
+[Daniel Juma](https://github.com/danieljuma5)
 
-These extra bonus deliverables involve using `fetch` to update data on the
-`json-server` backend by using `POST`, `PATCH`, and `DELETE` requests. These are
-meant for an extra, extra challenge and won't affect your grade. **Make sure to
-commit your work to save your progress before attempting the extra bonus
-deliverables!**
-
-1. When a ticket is purchased, persist the updated number of `tickets_sold` on
-   the server. Remember, the frontend shows the number of available tickets
-   based on the `tickets_sold` and the `capacity`, so only the `tickets_sold`
-   should be updated on the backend when a ticket is purchased. You will need to
-   make a request that follows this structure:
-
-   ```txt
-   PATCH /films/:id
-
-   Request Headers: {
-     Content-Type: application/json
-   }
-
-   Request Body: {
-     "tickets_sold": 28
-   }
-   ----
-   Example Response:
-   {
-      "id": "1",
-      "title": "The Giant Gila Monster",
-      "runtime": "108",
-      "capacity": 30,
-      "showtime": "04:00PM",
-      "tickets_sold": 28,
-      "description": "A giant lizard terrorizes a rural Texas community and a heroic teenager attempts to destroy the creature.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
-   }
-   ```
-
-2. Delete a film from the server. Add a delete button next to each film in the
-   `ul#films` menu. When the button is clicked, remove the film from the list
-   and also delete the film on the server:
-
-   ```txt
-   DELETE /films/:id
-
-   Example Response:
-   {}
-   ```
+### License
+License for this project is included in the LICENSE.txt in the root of the repository
